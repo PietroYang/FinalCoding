@@ -108,13 +108,13 @@ public class LoanCalcViewController implements Initializable   {
 
 	public void setMainApp(StudentCalc sc) {
 		this.SC = sc;
-		this.col_paynum.setCellValueFactory(new PropertyValueFactory<SheetItems, Integer>("col_paynum"));
-		this.col_duedate.setCellValueFactory(new PropertyValueFactory<SheetItems, String>("col_duedate"));
-		this.col_payment.setCellValueFactory(new PropertyValueFactory<SheetItems, Double>("col_payment"));
-		this.col_additionalPayment.setCellValueFactory(new PropertyValueFactory<SheetItems, Double>("col_additionalPayment"));
-		this.col_interest.setCellValueFactory(new PropertyValueFactory<SheetItems, Double>("col_interest"));
-		this.col_principle.setCellValueFactory(new PropertyValueFactory<SheetItems, Double>("col_principle"));
-		this.col_balance.setCellValueFactory(new PropertyValueFactory<SheetItems, Double>("col_balance"));
+//		this.col_paynum.setCellValueFactory(new PropertyValueFactory<SheetItems, Integer>("col_paynum"));
+//		this.col_duedate.setCellValueFactory(new PropertyValueFactory<SheetItems, String>("col_duedate"));
+//		this.col_payment.setCellValueFactory(new PropertyValueFactory<SheetItems, Double>("col_payment"));
+//		this.col_additionalPayment.setCellValueFactory(new PropertyValueFactory<SheetItems, Double>("col_additionalPayment"));
+//		this.col_interest.setCellValueFactory(new PropertyValueFactory<SheetItems, Double>("col_interest"));
+//		this.col_principle.setCellValueFactory(new PropertyValueFactory<SheetItems, Double>("col_principle"));
+//		this.col_balance.setCellValueFactory(new PropertyValueFactory<SheetItems, Double>("col_balance"));
 	}
 	
 	/**
@@ -153,17 +153,17 @@ public class LoanCalcViewController implements Initializable   {
 		double addition=Double.parseDouble(AdditionalPayment);
 		
 		
-		CalcHelper calHe=new CalcHelper(loan,addition,year, rate);
-		String resultLblTotalPayemnts=calHe.CalculateTotalPayment()+"";//Fin
-		String resultlblTotalInterest=calHe.CalculateInterest(cal)+"";//
-		//List<SheetItems> resutsInTable=computResultINTable(.addition..addition.);// =Finance .xxx 
+		CalcHelper calHe=new CalcHelper(loan,addition,year, rate,cal);
+		String resultLblTotalPayemnts=calHe.getCalculateTotalPayment()+"";//Fin
+		String resultlblTotalInterest=calHe.getTotalInterest()+"";//
+		List<SheetItems> resutsInTable=calHe.getResultInTable();// =Finance .xxx 
 		
 
 		this.lblTotalPayemnts.setText(resultLblTotalPayemnts);
 		this.lblTotalInterest.setText(resultlblTotalInterest);
 		
 		this.tableid.getItems().clear();
-		//this.tableid.getItems().addAll(resutsInTable);
+		this.tableid.getItems().addAll(resutsInTable);
 		
 	}
 	
