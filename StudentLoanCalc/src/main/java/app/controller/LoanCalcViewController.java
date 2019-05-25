@@ -77,25 +77,25 @@ public class LoanCalcViewController implements Initializable   {
 	    private Label lblTotalInterest;
 
 	    @FXML
-	    private TableColumn<SheetItems, Integer> col_paynum;
+	    private TableColumn<SheetItems, String> col_paynum;
 
 	    @FXML
 	    private TableColumn<SheetItems, String> col_duedate; 
 
 	    @FXML
-	    private TableColumn<SheetItems, Double> col_payment;
+	    private TableColumn<SheetItems, String> col_payment;
 
 	    @FXML
-	    private TableColumn<SheetItems, Double> col_additionalPayment;
+	    private TableColumn<SheetItems, String> col_additionalPayment;
 
 	    @FXML
-	    private TableColumn<SheetItems, Double> col_interest;
+	    private TableColumn<SheetItems, String> col_interest;
 
 	    @FXML
-	    private TableColumn<SheetItems, Double> col_principle;
+	    private TableColumn<SheetItems, String> col_principle;
 
 	    @FXML
-	    private TableColumn<SheetItems, Double> col_balance;
+	    private TableColumn<SheetItems, String> col_balance;
 	    
 	    @FXML
 	    private TableView<SheetItems> tableid;
@@ -108,13 +108,13 @@ public class LoanCalcViewController implements Initializable   {
 
 	public void setMainApp(StudentCalc sc) {
 		this.SC = sc;
-//		this.col_paynum.setCellValueFactory(new PropertyValueFactory<SheetItems, Integer>("col_paynum"));
-//		this.col_duedate.setCellValueFactory(new PropertyValueFactory<SheetItems, String>("col_duedate"));
-//		this.col_payment.setCellValueFactory(new PropertyValueFactory<SheetItems, Double>("col_payment"));
-//		this.col_additionalPayment.setCellValueFactory(new PropertyValueFactory<SheetItems, Double>("col_additionalPayment"));
-//		this.col_interest.setCellValueFactory(new PropertyValueFactory<SheetItems, Double>("col_interest"));
-//		this.col_principle.setCellValueFactory(new PropertyValueFactory<SheetItems, Double>("col_principle"));
-//		this.col_balance.setCellValueFactory(new PropertyValueFactory<SheetItems, Double>("col_balance"));
+		this.col_paynum.setCellValueFactory(new PropertyValueFactory<SheetItems, String>("col_paynum"));
+		this.col_duedate.setCellValueFactory(new PropertyValueFactory<SheetItems, String>("col_duedate"));
+		this.col_payment.setCellValueFactory(new PropertyValueFactory<SheetItems, String>("col_payment"));
+		this.col_additionalPayment.setCellValueFactory(new PropertyValueFactory<SheetItems, String>("col_additionalPayment"));
+		this.col_interest.setCellValueFactory(new PropertyValueFactory<SheetItems, String>("col_interest"));
+		this.col_principle.setCellValueFactory(new PropertyValueFactory<SheetItems, String>("col_principle"));
+		this.col_balance.setCellValueFactory(new PropertyValueFactory<SheetItems, String>("col_balance"));
 	}
 	
 	/**
